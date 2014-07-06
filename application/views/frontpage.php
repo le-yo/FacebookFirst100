@@ -18,8 +18,7 @@
                             <span class="name">Gender: Not Available</span><br/>
                           
                            
-                            <a href="http://facebook.com/<?php echo $key; ?>"> <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </a>
-                        </div>
+                            <!-- <a href="http://facebook.com/<?php echo $key; ?>"> <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </a> -->                        </div>
                         <div class="clearfix"></div>
                     </li>
 					 
