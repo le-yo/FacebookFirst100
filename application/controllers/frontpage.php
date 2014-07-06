@@ -1,12 +1,26 @@
 <?php if (!defined('BASEPATH')) die();
 class Frontpage extends Main_Controller {
 
-   public function index()
+   public function index($page='',$id)
 	{
+		$id = $id;
+		//parse_url($_SERVER['REQUEST_URI']);;
+		if (empty($id)) {
+			$id = 1;
+			
+		}
+		
+		$to = $id*10 + 1;
+		$from = $to-10;
+		
+		
+		
+		//print_r($from);
+		//exit;
 		$male = 0;
 		$female = 0;
 		$fbdata = array();
-		for ($i = 1; $i < 101; $i++) {
+		for ($i = $from; $i < $to; $i++) {
 			$url = 'http://graph.facebook.com/' . $i;
 			$data = $this->get_content($url);
 			$data = json_decode($data);
@@ -45,6 +59,7 @@ class Frontpage extends Main_Controller {
 	$fb['male'] = $male;
 	$fb['female'] = $female;
 	$fb['people'] = $fbdata;
+	$fb['id'] = $id;
 	  
       $this->load->view('include/header');
 	  // $this->view->fbdata = $fbdata;
