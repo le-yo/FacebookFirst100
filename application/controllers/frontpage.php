@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) die();
 class Frontpage extends Main_Controller {
 
-   public function index($page='',$id)
+   public function index($page='',$id='')
 	{
 		$id = $id;
 		//parse_url($_SERVER['REQUEST_URI']);;
